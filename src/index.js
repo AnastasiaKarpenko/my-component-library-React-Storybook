@@ -1,7 +1,18 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import PrimaryButton from "./components/Buttons";
+import PrimaryButton, {
+    SecondaryButton, 
+    TertiaryButton
+} from "./components/Buttons";
+import { GlobalStyle } from "./utils"
 
-const App = () => <PrimaryButton>Hello world</PrimaryButton>;
+const App = () => (
+    <div>
+        <PrimaryButton modifiers={["small", "error", "primaryButtonError"]}>Hello world</PrimaryButton>
+        <SecondaryButton modifiers={["large", "warning", "secondaryButtonWarning"]}>Goodbye world</SecondaryButton>
+        <TertiaryButton modifiers={["success", "tertiaryButtonSuccess"]}>Hey world</TertiaryButton>
+        <GlobalStyle/>
+    </div>
+)
 
 ReactDOM.render(<App />, document.querySelector("#root"));
